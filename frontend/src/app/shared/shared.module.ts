@@ -1,0 +1,24 @@
+//Modulos
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+
+//Componentes
+import { FooterComponent } from './components/footer/footer.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
+
+
+
+@NgModule({
+  declarations: [
+    FooterComponent,
+    NavbarComponent
+  ],
+  imports: [
+    CommonModule
+  ],
+  exports: [
+    FooterComponent,
+    NavbarComponent
+  ]
+})
+export class SharedModule { }
