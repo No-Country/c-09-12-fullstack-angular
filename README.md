@@ -1,4 +1,4 @@
-# Aplicación web para gestionar miembros y rutinas de clientes de un gimnasio
+# Aplicación web para gestionar miembros y rutinas de un gimnasio
 
 ## Tecnologías empleadas
 
