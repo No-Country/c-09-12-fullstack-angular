@@ -8,11 +8,15 @@ import { SharedModule } from './shared/shared.module';
 import { PublicModule } from './public/public.module';
 import { PrivateModule } from './private/private.module';
 import { AdminModule } from './Admin/admin.module';
+import { PublicComponent } from './public/public.component';
+import { PrivateComponent } from './private/private.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
+    PublicComponent,
+    PrivateComponent
   ],
   imports: [
     BrowserModule,
