@@ -2,13 +2,13 @@
 @import 'mixins-responsive';
 
 .formulario{
-  @extend .font-general;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
+  width: 100%;
   height: auto;
-  gap: 20px;
+  gap: 3em;
 }
 
 .formulario>a{
@@ -16,8 +16,10 @@
 }
 
 .box1{
-  @extend .flex-column-center;
-  background-color: $white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #0319577e;
   max-width: 570px;
   height: auto;
   border-radius: 16px;
@@ -42,7 +44,6 @@
 }
 
 .titulo{
-  @extend .flex-column-around-center;
   color: $black;
   gap: 15px;
 
@@ -52,25 +53,28 @@
 }
 
 .titulo>h2{
-  font-size: 35px;
+  font-size: 30px;
 
   @include screen(560px){
     font-size: 30px;
   }
+
+  @include screen(390px){
+    font-size: 25px;
+  }
 }
 
 .form{
-  @extend .flex-column-center;
-  gap: 60px;
+  @extend .flex-column-around-center;
+  gap: 20px;
 
   @include screen(720px){
     width: 470px;
-    gap: 40px;
+    gap: 10px;
   }
 
   @include screen(560px){
     width: 370px;
-    gap: 30px;
   }
 
   @include screen(390px){
@@ -78,17 +82,21 @@
   }
 
   @include screen(290px){
-    width: 270px;
     gap: 40px;
   }
 }
 
 .inputs{
-  @extend .flex-column-center;
-  gap: 50px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
 }
 
-.box-mail{
+.inputs>i{
+  cursor: pointer;
+}
+
+.box-form{
   display: flex;
   flex-direction: column;
   width: 487px;
@@ -107,11 +115,84 @@
   }
 
   @include screen(290px){
-    width: 230px;
+    width: 200px;
   }
 }
 
-.continue>button{
+.validacion{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 20px;
+
+  @include screen(720px){
+    gap: 15px;
+  }
+}
+
+.validacion>ul{
+  font-size: 15px;
+  display: grid;
+  grid-template-columns: repeat(2, 225px);
+  align-items: center;
+  color: $gray;
+
+  @include screen(720px){
+    grid-template-columns: repeat(2, 220px);
+    padding: auto;
+    margin: auto;
+  }
+
+  @include screen(560px){
+    grid-template-columns: repeat(1, 260px);
+    font-size: 18px;
+  }
+
+  @include screen(390px){
+    grid-template-columns: repeat(1, 200px);
+    font-size: 15px;
+  }
+}
+
+.terminos{
+  display: grid;
+  width: 100%;
+  grid-template-columns: repeat(2, 40px);
+}
+
+.terminos>input{
+  width: 20px;
+  margin-left: 10px;
+}
+
+.terminos>input[type="checkbox"]:checked{
+  accent-color: $black;
+}
+
+.terminos>label{
+  width: 450px;
+
+  @include screen(720px){
+    width: 400px;
+  }
+
+  @include screen(560px){
+    width: 330px;
+    font-size: 15px;
+  }
+
+  @include screen(390px){
+    width: 220px;
+    font-size: 14px;
+  }
+}
+
+.sign-in{
+  @extend .flex-column-around-center;
+  margin-top: 1em;
+}
+
+.sign-in>button{
   @extend .general-button;
   @extend .large-button;
   display: flex;
@@ -137,7 +218,6 @@
 }
 
 .box2{
-  @extend .flex-column-center;
   background-color: $white;
   width: 570px;
   height: 64px;
@@ -161,10 +241,9 @@
   @include screen(290px){
     width: 270px;
   }
-
 }
 
-.sign-in{
+.login{
   display: flex;
   flex-direction: row;
   font-size: 18px;

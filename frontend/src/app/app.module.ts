@@ -12,6 +12,7 @@ import { PrivateComponent } from './private/private.component';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
+import { ToastrModule } from 'ngx-toastr';
 
 
 @NgModule({
@@ -30,6 +31,15 @@ import { RouterModule } from '@angular/router';
     SharedModule,
     PublicModule,
     PrivateModule,
+    ToastrModule.forRoot({
+      timeOut:10000,
+      positionClass:'toast-bottom-right',
+      newestOnTop:false,
+      maxOpened: 1,
+      progressBar: true,
+      progressAnimation: 'decreasing',
+      preventDuplicates: true,
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]

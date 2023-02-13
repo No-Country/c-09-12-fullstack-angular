@@ -5,34 +5,16 @@
   font-family: $font-general;
   font-style: $font-style;
 }
+
 // Clase para el background general de todas las paginas
 .background{
-  background-image: '../../../assets/fondo1.jpg';
+  background-image: url('../../../assets/backgrounds/background-01.jpg');
   background-repeat: no-repeat;
   background-attachment: fixed;
   position: relative;
   background-size: 100vw 100vh;
 }
 
-// Clase para el segundo background de las paginas
-// .background-02{
-//   background: $background-02-DLZ-url;
-//   background-repeat: no-repeat;
-//   background-attachment: fixed;
-//   position: relative;
-//   background-size: 100vw 100vh;
-// }
-
-// Clase para el logo DLZ
-.logoDLZ{
-  width: 160px;
-  height: 90px;
-}
-// Clase para el logo DLZ-Autito
-.logoDLZ-Autito{
-  // width: 160px;
-  height: 90px;
-}
 // Clase para los botones generales
 .general-button{
   color: $white;

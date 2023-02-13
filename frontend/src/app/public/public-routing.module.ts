@@ -17,19 +17,22 @@ const routes: Routes = [
     path: '', component: PublicComponent, children:
       [
         { path: '', redirectTo: 'home', pathMatch: 'full' },
-        { path: 'home', component: HomeComponent, children: [
-          { path: '', component: CardsComponent  },
-          { path: 'routine-one', component: RoutineOneComponent  },
-          { path: 'routine-two', component: RoutineTwoComponent  },
-          { path: 'routine-three', component: RoutineThreeComponent  },
-        ] },
-        { path: 'login', component: LoginComponent, children: [
-            { path: '', component: FormLoginComponent,  },
+        {
+          path: 'home', component: HomeComponent, children: [
+            { path: '', component: CardsComponent },
+            { path: 'routine-one', component: RoutineOneComponent },
+            { path: 'routine-two', component: RoutineTwoComponent },
+            { path: 'routine-three', component: RoutineThreeComponent },
+          ]
+        },
+        {
+          path: 'login', component: LoginComponent, children: [
+            { path: '', component: FormLoginComponent, },
             { path: 'identify', component: FormIdentifyUserComponent, },
           ]
         },
         { path: 'about-us', component: AboutUsComponent },
-        { path: 'sign-in', component: SignInComponent,  },
+        { path: 'sign-in', component: SignInComponent, },
       ]
   }
 ];
@@ -39,4 +42,4 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 
-export class PublicRoutingModule  { }
+export class PublicRoutingModule { }
