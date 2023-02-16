@@ -1,0 +1,30 @@
+//Fuente general
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&family=Rubik+Glitch&display=swap%27');
+$font-general: 'Poppins';
+$font-style: normal;
+
+// Importacion de iconos de bootstrap
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css");
+
+// Variables para colores
+$white: #ffffff;
+$black: #111111;
+$gray: #666666;
+$dark-gray: #464646;
+$pink: #E01D8D;
+$violet: #5243C2;
+$red: #ff0000;
+$none-color: none;
+$aqua-marine: #00aae4;
+
+// Paleta 1 de colores Gym
+$wine: #8C082C;
+$blue: #0622BF;
+$dark-blue: #1F3A8C;
+$light-blue: #5EBAF2;
+$mostaza: #F2C230;
+
+
+
+// Variables para boton transparente
+$button-border-none: none;

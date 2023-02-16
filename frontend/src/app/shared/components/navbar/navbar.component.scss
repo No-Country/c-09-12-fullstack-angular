@@ -1,0 +1,42 @@
+.logo{
+  width: 10%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.logo>img{
+  width: 90px;
+  height: 90px;
+}
+
+.logoNombre>img{
+  width: 500px;
+}
+
+
+.navbar-toggler{
+  margin-right: 150px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.logoNombreInside{
+  width: 90%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.logoNombreInside>img{
+  width: 400px;
+  height: 70px;
+}
+
+.logoNombreInside>button{
+  width: 50px;
+}
+
+.navbar-nav{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}

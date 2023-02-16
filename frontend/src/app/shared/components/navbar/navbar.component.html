@@ -1,1 +1,44 @@
-<p>navbar works!</p>
+<nav class="navbar navbar-dark bg-dark fixed-top">
+  <div class="container-fluid">
+    <a class="logo" routerLink="/home" tabindex="”0”">
+      <img src="../../../../assets/logos/logo2-blanco2.0.png" alt="short-logo" />
+    </a>
+    <a class="logo logoNombre" routerLink="/home" tabindex="”0”">
+      <img src="../../../../assets/logos/NombreGym.png" alt="short-logo" />
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel">
+      <div class="offcanvas-header">
+        <a class="logoNombreInside" routerLink="/home" tabindex="”0”">
+          <img src="../../../../assets/logos/NombreGym.png" alt="short-logo" />
+        </a>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body">
+        <ul class="navbar-nav flex-grow-1 pe-3">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" routerLink="/login">Iniciar Sesion</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/sign-in">Registrarse</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/sign-in">Perfil</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/sign-in">Clientes</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/sign-in">Instructores</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/sign-in">Cerrar Sesión</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>

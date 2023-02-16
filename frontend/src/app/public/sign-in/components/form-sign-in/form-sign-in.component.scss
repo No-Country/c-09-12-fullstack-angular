@@ -1,0 +1,263 @@
+@import 'extends-class';
+@import 'mixins-responsive';
+
+.formulario{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  height: auto;
+  gap: 3em;
+}
+
+.formulario>a{
+  color: $black;
+}
+
+.box1{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #0319577e;
+  max-width: 570px;
+  height: auto;
+  border-radius: 16px;
+  padding: 40px;
+  gap: 30px;
+
+  @include screen(720px){
+    width: 470px;
+  }
+
+  @include screen(560px){
+    width: 370px;
+    padding: 20px;
+  }
+
+  @include screen(390px){
+    width: 270px;
+  }
+  @include screen(290px){
+    width: 270px;
+  }
+}
+
+.titulo{
+  color: $black;
+  gap: 15px;
+
+  @include screen(290px){
+    gap: 10px;
+  }
+}
+
+.titulo>h2{
+  font-size: 30px;
+
+  @include screen(560px){
+    font-size: 30px;
+  }
+
+  @include screen(390px){
+    font-size: 25px;
+  }
+}
+
+.form{
+  @extend .flex-column-around-center;
+  gap: 20px;
+
+  @include screen(720px){
+    width: 470px;
+    gap: 10px;
+  }
+
+  @include screen(560px){
+    width: 370px;
+  }
+
+  @include screen(390px){
+    width: 270px;
+  }
+
+  @include screen(290px){
+    gap: 40px;
+  }
+}
+
+.inputs{
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+}
+
+.inputs>i{
+  cursor: pointer;
+}
+
+.box-form{
+  display: flex;
+  flex-direction: column;
+  width: 487px;
+  font-size: 18px;
+
+  @include screen(720px){
+    width: 370px;
+  }
+
+  @include screen(560px){
+    width: 290px;
+  }
+
+  @include screen(390px){
+    width: 230px;
+  }
+
+  @include screen(290px){
+    width: 200px;
+  }
+}
+
+.validacion{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 20px;
+
+  @include screen(720px){
+    gap: 15px;
+  }
+}
+
+.validacion>ul{
+  font-size: 15px;
+  display: grid;
+  grid-template-columns: repeat(2, 225px);
+  align-items: center;
+  color: $gray;
+
+  @include screen(720px){
+    grid-template-columns: repeat(2, 220px);
+    padding: auto;
+    margin: auto;
+  }
+
+  @include screen(560px){
+    grid-template-columns: repeat(1, 260px);
+    font-size: 18px;
+  }
+
+  @include screen(390px){
+    grid-template-columns: repeat(1, 200px);
+    font-size: 15px;
+  }
+}
+
+.terminos{
+  display: grid;
+  width: 100%;
+  grid-template-columns: repeat(2, 40px);
+}
+
+.terminos>input{
+  width: 20px;
+  margin-left: 10px;
+}
+
+.terminos>input[type="checkbox"]:checked{
+  accent-color: $black;
+}
+
+.terminos>label{
+  width: 450px;
+
+  @include screen(720px){
+    width: 400px;
+  }
+
+  @include screen(560px){
+    width: 330px;
+    font-size: 15px;
+  }
+
+  @include screen(390px){
+    width: 220px;
+    font-size: 14px;
+  }
+}
+
+.sign-in{
+  @extend .flex-column-around-center;
+  margin-top: 1em;
+}
+
+.sign-in>button{
+  @extend .general-button;
+  @extend .large-button;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: $dark-blue;
+
+  @include screen(720px){
+    width: 370px;
+  }
+
+  @include screen(560px){
+    width: 290px;
+  }
+
+  @include screen(390px){
+    width: 230px;
+  }
+
+  @include screen(290px){
+    width: 230px;
+  }
+}
+
+.box2{
+  background-color: $white;
+  width: 570px;
+  height: 64px;
+  border-radius: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  @include screen(720px){
+    width: 470px;
+  }
+
+  @include screen(560px){
+    width: 370px;
+  }
+
+  @include screen(390px){
+    width: 270px;
+  }
+
+  @include screen(290px){
+    width: 270px;
+  }
+}
+
+.login{
+  display: flex;
+  flex-direction: row;
+  font-size: 18px;
+  gap: 10px;
+  margin-top: 15px;
+
+  @include screen(390px){
+    font-size: 15px;
+    gap: 5px;
+  }
+
+  @include screen(290px){
+    font-size: 15px;
+    gap: 5px;
+  }
+}
+

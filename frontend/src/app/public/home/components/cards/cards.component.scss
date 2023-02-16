@@ -1,0 +1,53 @@
+section{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  gap: 10em;
+}
+
+.card{
+  position: relative;
+  width: 500px;
+  height: 700px;
+  cursor: pointer;
+}
+
+.face{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.front{
+  box-shadow: 0 5px 10px #000;
+}
+
+.face>img{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.title{
+  position: absolute;
+  background: rgba(0,0,0,.4);
+  width: 100%;
+  height: 20%;
+  bottom: 280px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.title>h3{
+  font-size: 45px;
+  line-height: 45px;
+  letter-spacing: 5px;
+  color: #fff;
+  text-align: center;
+}

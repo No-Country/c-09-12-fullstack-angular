@@ -1,0 +1,35 @@
+<section class="formulario">
+  <div class="box1">
+
+    <div class="titulo">
+      <h2><strong>Recupera tu Cuenta</strong></h2>
+    </div>
+
+    <form [formGroup]="identifyForm" (ngSubmit)="sendEmail()" class="form" name="recover" >
+
+      <div class="inputs">
+        <div class="box-mail">
+          <mat-form-field class="example-full-width" color="accent">
+            <mat-label for="">Email</mat-label>
+            <input class="mat-input" type="email" matInput formControlName="email" placeholder="Ej. delorean@gmail.com" tabindex=”0”>
+            <mat-error *ngIf="isValidField('email')">
+              <strong>{{ getErrorMessage('email') }}</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+
+      <div class="continue">
+        <button [disabled]="identifyForm.invalid" class="btn btn-lg" type="submit" tabindex=”0”>Continuar</button>
+      </div>
+
+    </form>
+  </div>
+
+  <div class="box2">
+    <div class="sign-in">
+      <p><strong>¿No tienes una cuenta?</strong></p>
+      <a routerLink='/sign-in' routerLinkActive="active" ariaCurrentWhenActive="page" tabindex=”0”><strong>Regístrate.</strong></a>
+    </div>
+  </div>
+</section>
