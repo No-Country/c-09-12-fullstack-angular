@@ -10,6 +10,7 @@ import { PublicRoutingModule } from '../public/public-routing.module';
 
 
 
+
 @NgModule({
   declarations: [
     FooterComponent,

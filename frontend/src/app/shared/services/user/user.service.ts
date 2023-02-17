@@ -5,6 +5,7 @@ import { AUTHORIZE_RESET_PASS_URL, RESET_PASS_URL, USER_BY_EMAIL_URL, USER_IDENT
 import { UserLogin, UserResetPass, UserSendEmail } from '../../interface/userLogin';
 import { UserRegister } from '../../interface/userRegister';
 import { AuthorizeHeaders } from '../../models/users/authoriceHeaders';
+import { User } from '../../models/users/user';
 
 @Injectable({
   providedIn: 'root'
@@ -19,8 +20,8 @@ export class UserService {
   }
 
   // TRAE TODOS LOS USUARIOS
-  getAllUsers(): Observable<UserLogin[]> {
-    return this.http.get<UserLogin[]>(USER_URL).pipe(catchError(this.handlerUserError));
+  getAllUsers(): Observable<User[]> {
+    return this.http.get<User[]>(USER_URL).pipe(catchError(this.handlerUserError));
   }
 
   // ENVIA EMAIL DE RESET PASS AL EMAIL

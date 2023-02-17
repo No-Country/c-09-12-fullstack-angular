@@ -1,0 +1,43 @@
+<section>
+  <div class="newTour">
+    <div class="button-new">
+      <button class="btn btn-lg">Agregar Fecha</button>
+    </div>
+  </div>
+  <div class="container mt-5">
+    <!--*ngIf="users.length > 0" -->
+    <div class="row">
+      <div class="col-lg-8-offset-lg-2">
+        <div class="card">
+          <div class="card-body text-center">
+            <span class="title"><strong>Listado de Clientes</strong></span>
+            <div class="table-responsive">
+              <table class="table table-striped mt-4">
+                <thead>
+                  <tr>
+                    <th scope="col">Email</th>
+                    <th scope="col">Nombre y Apellido</th>
+                    <th scope="col">Estado</th>
+                    <th scope="col"></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let user of users" class="tour-info">
+                    <td>{{ user.email }}</td>
+                    <td>{{ user.firstName }}, {{ user.lastName | titlecase }}</td>
+                    <td class="buttons">
+                      <button
+                        (click)="openModal(user)"
+                        class="bi bi-pencil-square text-primary"
+                      ></button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

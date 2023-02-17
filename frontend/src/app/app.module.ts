@@ -15,11 +15,12 @@ import { RouterModule } from '@angular/router';
 import { ToastrModule } from 'ngx-toastr';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
     PublicComponent,
-    PrivateComponent
+    PrivateComponent,
   ],
   imports: [
     CommonModule,
