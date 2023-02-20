@@ -23,7 +23,7 @@ const Excercise = db.define('excercise', {
         allowNull: false,
     },
     weight: {
-        type: DataTypes.INTEGER,
+        type: DataTypes.DOUBLE,
         allowNull: false, 
     },
     time: {
