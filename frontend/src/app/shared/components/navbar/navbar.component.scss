@@ -64,13 +64,10 @@
     flex-wrap: nowrap;
   }
 
-  &__item {
-  }
-
   &__link {
     width: 3em;
 
-    @include responsive(tablet){
+    @include responsive(tablet) {
       width: 5em;
     }
   }
@@ -78,7 +75,7 @@
   &__link--nameLogo {
     width: 10em;
 
-    @include responsive(tablet){
+    @include responsive(tablet) {
       width: 20em;
     }
   }
@@ -90,7 +87,7 @@
       width: 2em;
       filter: invert(1);
 
-      @include responsive(tablet){
+      @include responsive(tablet) {
         width: 3em;
       }
 
