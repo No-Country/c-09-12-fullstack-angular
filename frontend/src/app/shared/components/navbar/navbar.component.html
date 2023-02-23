@@ -45,7 +45,7 @@
         </a>
       </li>
       <li>
-        <button>
+        <button (click)="toggleMenu()">
           <img class="navbar__img--menu" src="../../../../assets/icons/menu.png" alt="Image menu hamburger">
         </button>
       </li>
@@ -53,5 +53,5 @@
   </div>
 </nav>
 
-<app-menu></app-menu>
+<app-menu *ngIf="showMenu"></app-menu>
 
