@@ -23,8 +23,8 @@
                 </thead>
                 <tbody>
                   <tr *ngFor="let user of users" class="tour-info">
-                    <td>{{ user.email }}</td>
-                    <td>{{ user.firstName }}, {{ user.lastName | titlecase }}</td>
+                    <!-- <td>{{ user.email }}</td>
+                    <td>{{ user.firstName }}, {{ user.lastName | titlecase }}</td> -->
                     <td class="buttons">
                       <button
                         (click)="openModal(user)"
