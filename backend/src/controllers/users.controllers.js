@@ -48,7 +48,9 @@ const postUsers = async(req, res, next)=>{
     try {
         const newUser = req.body;
         const result = await userServices.postUser(newUser)
-        res.json(result)
+        res.json({
+            message: "Data Created"
+        })
     } catch (error) {
         next({
             message: "Data Error",

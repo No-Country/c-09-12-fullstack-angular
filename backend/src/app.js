@@ -7,6 +7,7 @@ const userRouter = require('./routes/users.routes')
 const morgan = require('morgan')
 const db = require('./utils/database')
 const authRouter = require('./routes/auth.routes')
+// const ejemplo = require()
 
 const app = express()
 initModels()
