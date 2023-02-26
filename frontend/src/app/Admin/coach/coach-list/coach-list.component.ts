@@ -1,20 +1,16 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-
 import { ToastrService } from 'ngx-toastr';
-import { UserService } from 'src/app/shared/services/user/user.service';
-
 import { User } from 'src/app/shared/models/users/user';
-
-import { ClientsUpComponent } from '../clients-up/clients-up.component';
-
+import { UserService } from 'src/app/shared/services/user/user.service';
+import { CoachUpComponent } from '../coach-up/coach-up.component';
 
 @Component({
-  selector: 'app-clients-list',
-  templateUrl: './clients-list.component.html',
-  styleUrls: ['./clients-list.component.scss']
+  selector: 'app-coach-list',
+  templateUrl: './coach-list.component.html',
+  styleUrls: ['./coach-list.component.scss']
 })
-export class ClientsListComponent implements OnInit {
+export class CoachListComponent {
 
   users:User[] = [];
 
@@ -40,13 +36,12 @@ export class ClientsListComponent implements OnInit {
   }
 
   openModal(client={}):void {
-    this.dialog.open(ClientsUpComponent, {
+    this.dialog.open(CoachUpComponent, {
       height: 'auto',
       width: '600px',
-      data: { title: 'Agregar Usuario'}
+      data: { title: 'Agregar Entrenador'}
 
     });
   }
-
 
 }

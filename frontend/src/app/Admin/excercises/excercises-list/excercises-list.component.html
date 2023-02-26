@@ -1,8 +1,8 @@
 <section>
   <div class="newTour">
-    <!-- <div class="button-new">
-      <button class="btn btn-lg">Agregar Fecha</button>
-    </div> -->
+    <div class="button-new">
+      <button class="btn btn-lg">Agregar Entrenador</button>
+    </div>
   </div>
   <div class="container mt-5">
     <!--*ngIf="users.length > 0" -->
@@ -10,26 +10,27 @@
       <div class="col-lg-8-offset-lg-2">
         <div class="card">
           <div class="card-body text-center">
-            <span class="title"><strong>Listado de Clientes</strong></span>
+            <span class="title"><strong>Listado de Entrenadores</strong></span>
             <div class="table-responsive">
               <table class="table table-striped mt-4">
                 <thead>
                   <tr>
-                    <th scope="col">Email</th>
-                    <th scope="col">Nombre y Apellido</th>
-                    <th scope="col">DNI</th>
-                    <th scope="col">Estado</th>
+                    <th scope="col">ID</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Series</th>
+                    <th scope="col">Repeticiones</th>
+                    <th scope="col">Tiempo</th>
                     <th scope="col"></th>
                   </tr>
                 </thead>
                 <tbody>
-                  <tr *ngFor="let user of users" class="tour-info">
-                    <!-- <td>{{ user.email }}</td>
-                    <td>{{ user.firstName }}, {{ user.lastName | titlecase }}</td>
+                  <tr *ngFor="let excercise of excercises" class="tour-info">
+                    <!-- <td>{{ excercise.id }}</td>
+                    <td>{{ excercise.name | titlecase }}</td>
                     <td>{{ user.dni }}</td> -->
                     <td class="buttons">
                       <button
-                        (click)="openModal(user)"
+                        (click)="openModal(excercises)"
                         class="bi bi-pencil-square text-primary"
                       ></button>
                     </td>
