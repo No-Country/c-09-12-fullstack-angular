@@ -7,6 +7,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { RouterModule } from '@angular/router';
 import { PublicRoutingModule } from '../public/public-routing.module';
+import { MenuComponent } from './components/navbar/menu/menu.component';
 
 
 
@@ -14,7 +15,8 @@ import { PublicRoutingModule } from '../public/public-routing.module';
 @NgModule({
   declarations: [
     FooterComponent,
-    NavbarComponent
+    NavbarComponent,
+    MenuComponent
   ],
   imports: [
     CommonModule,
