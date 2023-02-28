@@ -6,6 +6,7 @@
   &__wrapper {
     width: 100%;
     max-width: 90rem;
+    margin: 0 auto;
   }
 
   &__list {
@@ -13,7 +14,7 @@
     padding: 0;
     width: 100%;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
     flex-wrap: nowrap;
   }

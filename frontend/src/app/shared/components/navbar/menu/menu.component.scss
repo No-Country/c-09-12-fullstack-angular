@@ -1,8 +1,8 @@
 @import "../../../../shared/lib-styles/mediaQuery";
+@import "../../../../shared/lib-styles/variables";
 
 .menu{
     width: 100%;
-    max-width: 90em;
     display: flex;
     justify-content: end;
     z-index: 1;
@@ -62,6 +62,20 @@
     &__item{
         margin: 1em;
         position: relative;
+    }
+
+    &__link{
+      text-decoration: none;
+      color: $white;
+      font-weight: bold;
+      transition: color .5s ease-in-out;
+
+      @include responsive(desktop) {
+        &:hover{
+          color: $mostaza;
+        }
+      }
+
     }
 
     &__close{
