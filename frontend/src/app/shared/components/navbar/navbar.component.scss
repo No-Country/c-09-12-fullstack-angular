@@ -41,6 +41,7 @@
     &--menu {
       width: 2em;
       filter: invert(1);
+      transition: all 0.5s ease-in-out;
 
       @include responsive(tablet) {
         width: 3em;
