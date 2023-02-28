@@ -113,12 +113,12 @@ const authRouter = Router();
  * @openapi
  * /api/v1/auth/login:
  *   post:
- *     summary: login a user into the app
+ *     summary: post a publications into the app
  *     tags: [Auth]
  *     security:
  *       - bearerAuth: []
  *     requestBody:
- *       description: To login a user you need a some parameters, for example
+ *       description: To register a new publication you need a some parameters, for example
  *       required: true
  *       content:
  *         application/json:
@@ -148,7 +148,7 @@ const authRouter = Router();
  * @openapi
  * /api/v1/auth/signup:
  *   post:
- *     summary: Add a new user into the app
+ *     summary: post a publications into the app
  *     tags: [Auth]
  *     security:
  *       - bearerAuth: []
