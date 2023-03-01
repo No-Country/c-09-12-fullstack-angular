@@ -55,6 +55,9 @@ const userRouter = Router()
  *         userImg:
  *           type: string
  *           example: example.jpg
+ *         rol:
+ *           type: string
+ *           example: client
  *     create:
  *       type: object
  *       properties:
@@ -69,7 +72,6 @@ const userRouter = Router()
  *           example: Tonyop46
  * 
  */
-
 
 /**
  * @openapi
@@ -179,6 +181,7 @@ const userRouter = Router()
 */
 
 
+
 /**
  * @openapi
  * /api/v1/users/{id}:
@@ -240,6 +243,8 @@ const userRouter = Router()
 *         description: OK
 *
 */
+
+
 
 userRouter.get('/users', authenticate,getUsers)
 userRouter.get('/users/:id', authenticate,getById)

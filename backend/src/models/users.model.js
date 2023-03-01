@@ -38,7 +38,7 @@ const Users = db.define('users',{
         defaultValue: DataTypes.NOW()
     },
     weight: {
-        type: DataTypes.DOUBLE,
+        type: DataTypes.INTEGER,
     },
     objetive: {
         type: DataTypes.STRING,
