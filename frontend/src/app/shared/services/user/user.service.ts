@@ -1,7 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { catchError, Observable, throwError } from 'rxjs';
-import { AUTHORIZE_RESET_PASS_URL, RESET_PASS_URL, USER_BY_EMAIL_URL, USER_IDENTIFY_EMAIL_URL, USER_URL } from '../../constants/endpoints';
+import {  AUTHORIZE_RESET_PASS_URL, RESET_PASS_URL, USER_BY_EMAIL_URL, USER_GET_URL, USER_IDENTIFY_EMAIL_URL, USER_POST_URL } from '../../constants/endpoints';
 import { UserLogin, UserResetPass, UserSendEmail } from '../../interface/userLogin';
 import { UserRegister } from '../../interface/userRegister';
 import { AuthorizeHeaders } from '../../models/users/authoriceHeaders';
@@ -16,12 +16,12 @@ export class UserService {
 
   // CREAR USUARIO
   newUser(user: UserRegister): Observable<UserRegister | void> {
-    return this.http.post<UserRegister>(USER_URL, user).pipe(catchError(this.handlerUserError));
+    return this.http.post<UserRegister>(USER_POST_URL, user).pipe(catchError(this.handlerUserError));
   }
 
   // TRAE TODOS LOS USUARIOS
   getAllUsers(): Observable<User[]> {
-    return this.http.get<User[]>(USER_URL).pipe(catchError(this.handlerUserError));
+    return this.http.get<User[]>(USER_GET_URL).pipe(catchError(this.handlerUserError));
   }
 
   // ENVIA EMAIL DE RESET PASS AL EMAIL
@@ -44,7 +44,7 @@ export class UserService {
     return this.http.get<UserLogin>(`${USER_BY_EMAIL_URL}/${userEmail}`).pipe(catchError(this.handlerUserError));
   }
 
-  // EDITA UN USUARIO
+  // EDITA UN USUARIO POR EMAIL
   updateUser(userId: number, user: UserLogin): Observable<UserLogin> {
     return this.http.patch<UserLogin>(`${USER_BY_EMAIL_URL}/${userId}`, user).pipe(catchError(this.handlerUserError));
   }
