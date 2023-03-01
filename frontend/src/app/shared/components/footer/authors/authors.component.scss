@@ -1,20 +1,20 @@
-@import '../../../lib-styles/mediaQuery';
-@import '../../../lib-styles/variables';
+@import "../../../lib-styles/mediaQuery";
+@import "../../../lib-styles/variables";
 
-.authors{
-    display: flex;
-    justify-content: center;
-    align-items: baseline;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    text-decoration: none;
-    color: $white;
+.authors {
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  text-decoration: none;
+  color: $white;
 
-    &__icon{
-        margin: 0 .5rem;
-    }
+  &__icon {
+    margin: 0 0.5rem;
+  }
 
-    &__name{
-        font-size: 1em;
-    }
+  &__name {
+    font-size: 1em;
+  }
 }

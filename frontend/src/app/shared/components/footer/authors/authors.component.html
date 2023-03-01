@@ -1,9 +1,14 @@
 <div class="authors" *ngFor="let author of authors">
-    <a class="authors__link" href="{{author.linkedinURL}}" target="_blank" rel="noopener noreferrer">
-      <i class="authors__icon bi bi-linkedin"></i>
-    </a>
-    <a href="{{author.githubURL}}" target="_blank" rel="noopener noreferrer">
-      <i class="authors__icon bi bi-github"></i>
-    </a>
-    <h3 class="authors__name">{{author.name}}</h3>
-  </div>
+  <a
+    class="authors__link"
+    href="{{ author.linkedinURL }}"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    <i class="authors__icon bi bi-linkedin"></i>
+  </a>
+  <a href="{{ author.githubURL }}" target="_blank" rel="noopener noreferrer">
+    <i class="authors__icon bi bi-github"></i>
+  </a>
+  <h3 class="authors__name">{{ author.name }}</h3>
+</div>
