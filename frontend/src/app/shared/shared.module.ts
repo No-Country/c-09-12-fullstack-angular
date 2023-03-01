@@ -8,6 +8,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { RouterModule } from '@angular/router';
 import { PublicRoutingModule } from '../public/public-routing.module';
 import { MenuComponent } from './components/navbar/menu/menu.component';
+import { AuthorsComponent } from './components/footer/authors/authors.component';
 
 
 
@@ -16,7 +17,8 @@ import { MenuComponent } from './components/navbar/menu/menu.component';
   declarations: [
     FooterComponent,
     NavbarComponent,
-    MenuComponent
+    MenuComponent,
+    AuthorsComponent
   ],
   imports: [
     CommonModule,
