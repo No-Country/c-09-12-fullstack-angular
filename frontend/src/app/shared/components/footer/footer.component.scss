@@ -1,0 +1,18 @@
+@import '../../lib-styles/mediaQuery';
+@import '../../lib-styles/variables';
+
+.footer{
+    width: 100%;
+
+    &__wrapper{
+        max-width: 90rem;
+    }
+
+    &__imgContainer{
+        width: 5rem;
+    }
+
+    &__authors{
+        color: $white;
+    }
+}
