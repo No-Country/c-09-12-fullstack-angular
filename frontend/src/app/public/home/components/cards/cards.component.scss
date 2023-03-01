@@ -1,39 +1,44 @@
-@import '../../../../shared/lib-styles/mediaQuery';
-@import '../../../../shared/lib-styles/variables';
+@import "../../../../shared/lib-styles/mediaQuery";
+@import "../../../../shared/lib-styles/variables";
 
-.home{
+.home {
   display: flex;
   justify-content: center;
-  align-items: start;
+  align-items: center;
   flex-direction: column;
+  flex-wrap: wrap;
   padding: 1rem;
   min-height: 100vh;
+  max-width: 90rem;
+  margin: 0 auto;
 
-  @include responsive(desktop){
+  @include responsive(desktop) {
     flex-direction: row;
   }
 
-  &__card{
-
+  &__card {
+    width: 100%;
     max-width: 40rem;
-    margin: 1rem;
     position: relative;
     border-radius: 2rem;
     overflow: hidden;
+    margin: 0 0 1rem 0;
 
-    @include responsive(desktop){
+    @include responsive(desktop) {
       filter: grayscale(1);
       transition: all 0.2s ease-in-out;
-      width: 32.5rem;
 
-
-      &:hover{
+      &:hover {
         filter: none;
       }
     }
+
+    @include responsive(large-desktop) {
+      margin: 1rem;
+    }
   }
 
-  &__title{
+  &__title {
     position: absolute;
     bottom: 10%;
     width: 100%;
