@@ -1,19 +1,29 @@
 <section class="formulario">
   <div class="box1">
-
     <div class="titulo">
       <h2><strong>Iniciar Sesión</strong></h2>
     </div>
 
-    <form [formGroup]="loginForm" (ngSubmit)="onLogin()" class="form"  name="login">
-
+    <form
+      [formGroup]="loginForm"
+      (ngSubmit)="onLogin()"
+      class="form"
+      name="login"
+    >
       <div class="inputs">
         <div class="box-form">
           <mat-form-field class="example-full-width" color="accent">
             <mat-label for="">Email</mat-label>
-            <input class="mat-input" type="email" matInput formControlName="email" placeholder="Ej. delorean@gmail.com" tabindex=”0”>
+            <input
+              class="mat-input"
+              type="email"
+              matInput
+              formControlName="email"
+              placeholder="Ej. delorean@gmail.com"
+              tabindex="”0”"
+            />
             <mat-error *ngIf="isValidField('email')">
-              <strong>{{ getErrorMessage('email') }}</strong>
+              <strong>{{ getErrorMessage("email") }}</strong>
             </mat-error>
           </mat-form-field>
         </div>
@@ -21,27 +31,47 @@
         <div class="box-form">
           <mat-form-field color="accent">
             <mat-label>Contraseña</mat-label>
-            <input matInput type="password" [type]="hide ? 'password' : 'text'" formControlName="password" tabindex=”0”>
-            <i mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
-              <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+            <input
+              matInput
+              type="password"
+              [type]="hide ? 'password' : 'text'"
+              formControlName="password"
+              tabindex="”0”"
+            />
+            <i
+              mat-icon-button
+              matSuffix
+              (click)="hide = !hide"
+              [attr.aria-label]="'Hide password'"
+              [attr.aria-pressed]="hide"
+            >
+              <mat-icon>{{ hide ? "visibility_off" : "visibility" }}</mat-icon>
             </i>
             <mat-error *ngIf="isValidField('password')">
-              <strong>{{ getErrorMessage('password') }}</strong>
+              <strong>{{ getErrorMessage("password") }}</strong>
             </mat-error>
           </mat-form-field>
         </div>
       </div>
 
       <div class="login">
-        <button class="login__btn" [disabled]="loginForm.invalid" type="submit" tabindex=”0”>Iniciar Sesión</button>
+        <button
+          class="login__btn"
+          [disabled]="loginForm.invalid"
+          type="submit"
+          tabindex="”0”"
+        >
+          Iniciar Sesión
+        </button>
       </div>
     </form>
     <div class="forgot-pass">
       <a
-        routerLink='/login/identify'
+        routerLink="/login/identify"
         routerLinkActive="active"
         ariaCurrentWhenActive="page"
-        tabindex=”0”>
+        tabindex="”0”"
+      >
         <strong>¿Olvidaste tu contraseña?</strong>
       </a>
     </div>
@@ -51,14 +81,13 @@
     <div class="sign-in">
       <p><strong>¿No tienes una cuenta?</strong></p>
       <a
-        routerLink='/sign-in'
+        routerLink="/sign-in"
         routerLinkActive="active"
         ariaCurrentWhenActive="page"
-        tabindex=”0”>
+        tabindex="”0”"
+      >
         <strong>Regístrate.</strong>
       </a>
     </div>
   </div>
-
 </section>
-
