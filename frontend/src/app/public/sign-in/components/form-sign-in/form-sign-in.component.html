@@ -12,29 +12,29 @@
         <div class="box-form">
           <mat-form-field class="example-full-width" color="primary">
             <mat-label for="">Nombre</mat-label>
-            <input class="mat-input" type="text" matInput formControlName="name" tabindex=”0”>
-            <mat-error *ngIf="isValidField('name')">
-              <strong>{{ getErrorMessage('name') }}</strong>
-            </mat-error>
+            <input class="mat-input" type="text" matInput formControlName="firstName" tabindex=”0”>
+            <!-- <mat-error *ngIf="isValidField('firstName')">
+              <strong>{{ getErrorMessage('firstName') }}</strong>
+            </mat-error> -->
           </mat-form-field>
         </div>
 
         <div class="box-form">
           <mat-form-field class="example-full-width" color="accent">
             <mat-label for="">Apellido</mat-label>
-            <input class="mat-input" type="text" matInput formControlName="lastname" tabindex=”0”>
-            <mat-error *ngIf="isValidField('lastname')">
-              <strong>{{ getErrorMessage('lastname') }}</strong>
-            </mat-error>
+            <input class="mat-input" type="text" matInput formControlName="lastName" tabindex=”0”>
+            <!-- <mat-error *ngIf="isValidField('lastName')">
+              <strong>{{ getErrorMessage('lastName') }}</strong>
+            </mat-error> -->
           </mat-form-field>
         </div>
 
         <div class="box-form">
           <mat-form-field class="example-full-width" color="accent">
             <mat-label>Teléfono</mat-label>
-            <input type="tel" formControlName="telephone" matInput placeholder="Ej. 5545281234" tabindex=”0”>
-            <mat-error *ngIf="isValidField('telephone')">
-              <strong>{{ getErrorMessage('telephone') }}</strong>
+            <input type="tel" formControlName="phoneNumber" matInput placeholder="Ej. 5545281234" tabindex=”0”>
+            <mat-error *ngIf="isValidField('phoneNumber')">
+              <strong>{{ getErrorMessage('phoneNumber') }}</strong>
             </mat-error>
           </mat-form-field>
         </div>
@@ -62,7 +62,7 @@
           </mat-form-field>
         </div>
 
-        <div class="box-form">
+        <!-- <div class="box-form">
           <mat-form-field color="accent">
             <mat-label>Repetir Contraseña</mat-label>
             <input matInput type="password" [type]="hide2 ? 'password' : 'text'" formControlName="confirmPassword" tabindex=”0”>
@@ -76,11 +76,11 @@
               <strong>Las contraseñas no coinciden</strong>
             </mat-error>
           </mat-form-field>
-        </div>
+        </div> -->
 
       </div>
 
-      <div class="validacion">
+      <!-- <div class="validacion">
         <ul>
           <li type="disc">Usa al menos 1 mayúscula</li>
           <li type="disc">Usa al menos 1 minúscula</li>
@@ -97,7 +97,7 @@
           <strong>Debe aceptar los terminos y condiciones para poder registrarse</strong>
         </mat-error>
 
-      </div>
+      </div> -->
 
       <div class="sign-in">
         <button [disabled]="signInForm.invalid" class="btn btn-lg" type="submit" tabindex=”0”>Crear Cuenta</button>
