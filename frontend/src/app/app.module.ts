@@ -10,9 +10,10 @@ import { PrivateModule } from './private/private.module';
 import { PublicComponent } from './public/public.component';
 import { PrivateComponent } from './private/private.component';
 import { CommonModule } from '@angular/common';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 import { ToastrModule } from 'ngx-toastr';
+import { AdminInterceptor } from './shared/interceptors/admin.interceptor';
 
 
 
@@ -42,7 +43,9 @@ import { ToastrModule } from 'ngx-toastr';
       preventDuplicates: true,
     })
   ],
-  providers: [],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: AdminInterceptor, multi: true },
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

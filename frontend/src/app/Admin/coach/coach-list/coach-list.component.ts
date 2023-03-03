@@ -1,3 +1,4 @@
+import { HttpHeaders } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { ToastrService } from 'ngx-toastr';
@@ -14,6 +15,14 @@ export class CoachListComponent {
 
   users:User[] = [];
 
+  datosLocalStorage = JSON.parse(localStorage.getItem("user")!);
+  tokenLocalStorage = this.datosLocalStorage.token;
+
+
+  headers = new HttpHeaders({
+      'Authorization': `Bearer ${this.tokenLocalStorage}`
+  });
+
   constructor(
     private userService: UserService,
     private toastr:ToastrService,
@@ -28,7 +37,7 @@ export class CoachListComponent {
 
 
   getAllUsers(){
-    this.userService.getAllUsers().subscribe(data => {
+    this.userService.getAllUsers(this.headers).subscribe(data => {
       this.users = data;
     }, error => {
       console.log(error)

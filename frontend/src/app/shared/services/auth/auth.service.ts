@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { JwtHelperService } from '@auth0/angular-jwt';
@@ -6,6 +6,7 @@ import { ToastrService } from 'ngx-toastr';
 import { BehaviorSubject, catchError, map, Observable, throwError } from 'rxjs';
 import { USER_LOGIN_URL } from '../../constants/endpoints';
 import { UserLogin, UserResponse } from '../../interface/userLogin';
+import { UserService } from '../user/user.service';
 
 
 const helper = new JwtHelperService();
@@ -18,6 +19,7 @@ export class AuthService {
   private user = new BehaviorSubject<UserResponse>(null!);
 
   constructor(
+    private userService:UserService,
     private http: HttpClient,
     private router:Router,
     private toastrService:ToastrService
@@ -36,7 +38,7 @@ export class AuthService {
   login(authData:UserLogin): Observable<UserResponse | void>{
     return this.http.post<UserResponse>(USER_LOGIN_URL, authData).pipe(
       map((user:UserResponse) => {
-        this.toastrService.success('Bienvenido a Delorean Zeta Usuario Promedio', 'Login Exitoso');
+        this.toastrService.success('Bienvenido a Titanic Gym Usuario Promedio', 'Login Exitoso');
         this.saveLocalStorage(user);
         this.user.next(user);
         return user;
@@ -66,8 +68,10 @@ export class AuthService {
     }
   }
 
+
+
   private saveLocalStorage(user:UserResponse):void{
-    const { userId, ...rest } = user;
+    const { id, ...rest } = user;
     localStorage.setItem('user', JSON.stringify(rest));
   }
 

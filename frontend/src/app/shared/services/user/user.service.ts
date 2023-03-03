@@ -20,8 +20,8 @@ export class UserService {
   }
 
   // TRAE TODOS LOS USUARIOS
-  getAllUsers(): Observable<User[]> {
-    return this.http.get<User[]>(USER_GET_URL).pipe(catchError(this.handlerUserError));
+  getAllUsers(headers:HttpHeaders): Observable<User[]> {
+    return this.http.get<User[]>(USER_GET_URL, { headers }).pipe(catchError(this.handlerUserError));
   }
 
   // ENVIA EMAIL DE RESET PASS AL EMAIL
@@ -34,24 +34,29 @@ export class UserService {
     return this.http.post<AuthorizeHeaders>(AUTHORIZE_RESET_PASS_URL, { headers }).pipe(catchError(this.handlerUserError));
   }
 
+  //Autorizacion que valida el token del usuario para traer todos los usuarios
+  authorizeHeadersGetUsers(headers:HttpHeaders): Observable<AuthorizeHeaders>{
+    return this.http.post<AuthorizeHeaders>(USER_GET_URL, { headers }).pipe(catchError(this.handlerUserError));
+  }
+
   // ENVIA LA CONTRASEÑA NUEVA AL EMAIL
   resetPass(userPassword:UserResetPass, headers:HttpHeaders): Observable<UserResetPass>{
     return this.http.post<UserResetPass>(RESET_PASS_URL, userPassword, { headers }).pipe(catchError(this.handlerUserError));
   }
 
   // TRAE UN USUARIO POR EMAIL
-  getUserByEmail(userEmail: string): Observable<UserLogin> {
-    return this.http.get<UserLogin>(`${USER_BY_EMAIL_URL}/${userEmail}`).pipe(catchError(this.handlerUserError));
+  getUserByEmail(userEmail: string, headers:HttpHeaders): Observable<UserLogin> {
+    return this.http.get<UserLogin>(`${USER_BY_EMAIL_URL}/${userEmail}`, { headers }).pipe(catchError(this.handlerUserError));
   }
 
   // EDITA UN USUARIO POR EMAIL
-  updateUser(userId: number, user: UserLogin): Observable<UserLogin> {
-    return this.http.patch<UserLogin>(`${USER_BY_EMAIL_URL}/${userId}`, user).pipe(catchError(this.handlerUserError));
+  updateUser(userId: number, user: UserLogin, headers:HttpHeaders): Observable<UserLogin> {
+    return this.http.patch<UserLogin>(`${USER_BY_EMAIL_URL}/${userId}`, user, { headers }).pipe(catchError(this.handlerUserError));
   }
 
   // ELIMINA UN USUARIO
-  // deleteUser(userId:number):Observable<{}>{
-  //   return this.http.delete<UserLogin>(`${USER_BY_ID_URL}/${userId}`).pipe(catchError(this.handlerUserError));
+  // deleteUser(userId:number, headers:HttpHeaders):Observable<{}>{
+  //   return this.http.delete<UserLogin>(`${USER_BY_ID_URL}/${userId}`, { headers }).pipe(catchError(this.handlerUserError));
   // }
 
   handlerUserError(error: any): Observable<never> {

@@ -6,9 +6,11 @@ export interface UserLogin {
 };
 
 export interface UserResponse {
+  id: number;
+  email:string;
+  firstName:string;
+  lastName:string;
   token: string;
-  userId: number;
-  role: Role;
 };
 
 export interface UserSendEmail {

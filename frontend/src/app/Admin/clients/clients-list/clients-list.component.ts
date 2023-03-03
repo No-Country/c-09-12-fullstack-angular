@@ -7,6 +7,7 @@ import { UserService } from 'src/app/shared/services/user/user.service';
 import { User } from 'src/app/shared/models/users/user';
 
 import { ClientsUpComponent } from '../clients-up/clients-up.component';
+import { HttpHeaders } from '@angular/common/http';
 
 
 @Component({
@@ -18,22 +19,44 @@ export class ClientsListComponent implements OnInit {
 
   users:User[] = [];
 
+  datosLocalStorage = JSON.parse(localStorage.getItem("user")!);
+  tokenLocalStorage = this.datosLocalStorage.token;
+
+
+  headers = new HttpHeaders({
+      'Authorization': `Bearer ${this.tokenLocalStorage}`
+  });
+
   constructor(
     private userService: UserService,
     private toastr:ToastrService,
     private dialog: MatDialog
     ) {
 
+
+
   }
 
   ngOnInit(): void {
-    // this.getAllUsers();
+    // this.userService.authorizeHeadersGetUsers(headers).subscribe( res => {
+    //   console.log(res);
+    //   this.getAllUsers();
+    // }, (error) =>{
+    //   console.log(error);
+    //   // this.toastrService.error('Vuelva a enviar el mail de recuperacion de contraseña', 'Token Expirado');
+    //   // this.router.navigate(['/login/identify']);
+    // });
+
+    this.getAllUsers();
+
+
   }
 
 
   getAllUsers(){
-    this.userService.getAllUsers().subscribe(data => {
+    this.userService.getAllUsers(this.headers).subscribe(data => {
       this.users = data;
+      console.log(data)
     }, error => {
       console.log(error)
     })
