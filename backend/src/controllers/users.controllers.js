@@ -79,7 +79,7 @@ const patchUsers = async(req, res, next)=>{
         const {id}=req.params;
         const {rol} = req.body;
         const patchUser = {rol}
-        if(patchUser.rol === "client" || patchUser.rol ==="coach"){
+        if(patchUser.rol === "client" || patchUser.rol ==="coach" || patchUser.rol == "admin"){
             const result = await userServices.patch(patchUser, id);
             res.json({
             message: "rol updated"
