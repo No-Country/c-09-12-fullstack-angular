@@ -8,6 +8,7 @@ const routes: Routes = [
   { path: '', loadChildren: () => import('./private/private.module').then(m => m.PrivateModule) },
   { path: '', loadChildren: () => import('./Admin/admin.module').then(m => m.AdminModule) },
   { path: 'home', component: HomeComponent},
+  { path: '**', component: HomeComponent},
 ];
 
 @NgModule({

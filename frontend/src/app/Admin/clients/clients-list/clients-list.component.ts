@@ -38,18 +38,7 @@ export class ClientsListComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    // this.userService.authorizeHeadersGetUsers(headers).subscribe( res => {
-    //   console.log(res);
-    //   this.getAllUsers();
-    // }, (error) =>{
-    //   console.log(error);
-    //   // this.toastrService.error('Vuelva a enviar el mail de recuperacion de contraseña', 'Token Expirado');
-    //   // this.router.navigate(['/login/identify']);
-    // });
-
     this.getAllUsers();
-
-
   }
 
 
@@ -66,7 +55,7 @@ export class ClientsListComponent implements OnInit {
     this.dialog.open(ClientsUpComponent, {
       height: 'auto',
       width: '600px',
-      data: { title: 'Agregar Usuario'}
+      data: { title: 'Agregar Usuario', client}
 
     });
   }

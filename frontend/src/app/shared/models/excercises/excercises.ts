@@ -1,7 +1,9 @@
 export class Excercises{
   id?:number;
   name!:string;
+  muscle?:string;
+  repeat?:number;
+  weight?:number;
   time?:string;
-  sessions?:string;
-  repet?:string;
+  rutineId?:number;
 }

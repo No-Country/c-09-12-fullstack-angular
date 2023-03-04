@@ -6,6 +6,7 @@ import { AdminComponent } from './admin.component';
 import { AdminCoachComponent } from './coach/page/admin-coach.component';
 import { AdminRoutinesComponent } from './routines/page/admin-routines.component';
 import { AdminExcercisesComponent } from './excercises/page/admin-excercises.component';
+import { CheckLoginGuard } from '../shared/guards/check-login/check-login.guard';
 
 
 
@@ -15,7 +16,7 @@ const routes: Routes = [
       [
         { path: '', redirectTo: 'home', pathMatch: 'full' },
         {
-          path: 'admin', component: AdminComponent, children: [
+          path: 'admin', component: AdminComponent, canActivate: [CheckLoginGuard], children: [
             { path: '', component: AdminClientsComponent },
             { path: 'clients', component: AdminClientsComponent },
             { path: 'coach', component: AdminCoachComponent},

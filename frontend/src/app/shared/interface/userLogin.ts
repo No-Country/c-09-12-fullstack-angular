@@ -11,6 +11,7 @@ export interface UserResponse {
   firstName:string;
   lastName:string;
   token: string;
+  role:Role;
 };
 
 export interface UserSendEmail {
