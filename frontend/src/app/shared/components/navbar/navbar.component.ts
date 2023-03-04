@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component} from '@angular/core';
 import { Subject, Subscription, takeUntil } from 'rxjs';
 import { Role, UserResponse } from '../../interface/userLogin';
 import { AuthService } from '../../services/auth/auth.service';
@@ -38,6 +38,7 @@ export class NavbarComponent {
 
   toggleMenu(): void {
       this.showMenu = !this.showMenu;
+
     if (this.showMenu) {
       this.buttonImage = '../../../../assets/icons/cruzar.png';
     } else {
