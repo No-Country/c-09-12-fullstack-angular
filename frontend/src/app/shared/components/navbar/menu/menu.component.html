@@ -1,30 +1,51 @@
 <div class="menu">
-    <div class="menu__wrapper bg-dark">
-        <ul class="menu__list">
-            <li class="menu__item">
-                <a class="menu__link" aria-current="page" routerLink="/login">Iniciar Sesión</a>
-              </li>
-              <li class="menu__item">
-                <a class="menu__link" routerLink="/sign-in">Registrarse</a>
-              </li>
-              <li class="menu__item">
-                <a class="menu__link" routerLink="/profile">Perfil</a>
-              </li>
-              <li class="menu__item">
-                <a class="menu__link" routerLink="/admin/clients">Clientes</a>
-              </li>
-              <li class="menu__item">
-                <a class="menu__link" routerLink="/admin/coach">Entrenadores</a>
-              </li>
-              <li class="menu__item">
-                <a class="menu__link" routerLink="/admin/routine">Rutinas</a>
-              </li>
-              <li class="menu__item">
-                <a class="menu__link" routerLink="/admin/exercises">Ejercicios</a>
-              </li>
-              <li class="menu__item">
-                <a class="menu__link" routerLink="/home" (click)="onLogout()">Cerrar Sesión</a>
-              </li>
-        </ul>
-    </div>
+  <div class="menu__wrapper bg-dark">
+    <ul class="menu__list">
+      <li
+        class="menu__item"
+        *ngIf="
+          currentUserRole !== 'client' &&
+          currentUserRole !== 'admin' &&
+          currentUserRole !== 'coach'
+        "
+      >
+        <a class="menu__link" aria-current="page" routerLink="/login"
+          >Iniciar Sesión</a
+        >
+      </li>
+      <li
+        class="menu__item"
+        *ngIf="
+          currentUserRole !== 'client' &&
+          currentUserRole !== 'admin' &&
+          currentUserRole !== 'coach'
+        "
+      >
+        <a class="menu__link" aria-current="page" routerLink="/profile"
+          >Registrarse</a
+        >
+      </li>
+      <li
+        class="menu__item"
+        *ngFor="let option of menuOptions"
+        routerLinkActive="active"
+      >
+        <a class="menu__link" [routerLink]="option.routerLink">{{
+          option.name
+        }}</a>
+      </li>
+      <li
+        class="menu__item"
+        *ngIf="
+          currentUserRole === 'client' ||
+          currentUserRole === 'admin' ||
+          currentUserRole === 'coach'
+        "
+      >
+        <a class="menu__link" routerLink="/home" (click)="onLogout()"
+          >Cerrar Sesión</a
+        >
+      </li>
+    </ul>
+  </div>
 </div>
