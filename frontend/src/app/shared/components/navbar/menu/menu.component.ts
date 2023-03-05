@@ -9,10 +9,14 @@ import { v4 as uuidv4 } from 'uuid';
 })
 export class MenuComponent {
 
-  datosLocalStorage = JSON.parse(localStorage.getItem("user")!);
+  currentUserRole: string;
+
+  datosLocalStorage = JSON.parse(localStorage.getItem('user') || '{}');
   roleLocalStorage = this.datosLocalStorage.role;
 
-  currentUserRole: string =  this.roleLocalStorage;
+  constructor(private authService: AuthService) {
+    this.currentUserRole = localStorage.getItem('user') ? this.roleLocalStorage : '';
+  }
 
   menuOptions: { id: string; routerLink: string; name: string }[] = [];
 
@@ -78,8 +82,6 @@ export class MenuComponent {
       ];
     }
   }
-
-  constructor(private authService: AuthService) {}
 
   onLogout(): void {
     this.authService.logout();
