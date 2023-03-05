@@ -8,6 +8,7 @@ import { AuthService } from '../../services/auth/auth.service';
   providedIn: 'root'
 })
 export class CheckLoginGuard implements CanActivate {
+  
   constructor(private authService:AuthService){}
 
   canActivate(): Observable<boolean> {

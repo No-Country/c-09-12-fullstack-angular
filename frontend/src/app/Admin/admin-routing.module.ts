@@ -16,12 +16,12 @@ const routes: Routes = [
       [
         { path: '', redirectTo: 'home', pathMatch: 'full' },
         {
-          path: 'admin', component: AdminComponent, canActivate: [CheckLoginGuard], children: [
-            { path: '', component: AdminClientsComponent },
-            { path: 'clients', component: AdminClientsComponent },
-            { path: 'coach', component: AdminCoachComponent},
-            { path: 'routine', component: AdminRoutinesComponent },
-            { path: 'exercises', component: AdminExcercisesComponent },
+          path: 'admin', component: AdminComponent, children: [
+            { path: '', component: AdminClientsComponent, },
+            { path: 'clients', component: AdminClientsComponent,  },
+            { path: 'coach', component: AdminCoachComponent,  },
+            { path: 'routine', component: AdminRoutinesComponent,  },
+            { path: 'exercises', component: AdminExcercisesComponent,  },
           ]
         },
       ]

@@ -22,17 +22,17 @@ export class ExercisesService {
   }
 
   // AGREGA UN TOUR
-  newTour(tourValue:Excercises, headers:HttpHeaders): Observable<Excercises | any>{
+  newExcercises(tourValue:Excercises, headers:HttpHeaders): Observable<Excercises | any>{
     return this.http.post(EXCERCISES_URL, tourValue, {headers, responseType: 'text'} ).pipe(catchError(this.handlerUserError));
   }
 
   // EDITA UN TOUR
-  updateTour(id:number, tourValue:Excercises, headers:HttpHeaders): Observable<any>{
+  updateExcercises(id:number, tourValue:Excercises, headers:HttpHeaders): Observable<any>{
     return this.http.patch<Excercises>(`${EXCERCISES_BY_ID_URL}/${id}`, tourValue, { headers }).pipe(catchError(this.handlerUserError));
   }
 
   //ELIMINA UN TOUR
-  deleteTour(id:number, headers:HttpHeaders): Observable<{}>{
+  deleteExcercises(id:number, headers:HttpHeaders): Observable<{}>{
     return this.http.delete<Excercises>(`${EXCERCISES_BY_ID_URL}/${id}`, { headers }).pipe(catchError(this.handlerUserError));
   }
 

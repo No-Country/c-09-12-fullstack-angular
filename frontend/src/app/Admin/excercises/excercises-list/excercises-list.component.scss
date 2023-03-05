@@ -8,7 +8,7 @@ section{
   width: 100%;
 }
 
-.newTour{
+.newBox{
   display: flex;
   justify-content: flex-end;
   width: 65%;
@@ -18,12 +18,12 @@ section{
   }
 }
 
-.newTour>button{
+.button-new>button{
   @extend .general-button;
   display: flex;
   justify-content: space-around;
   align-items: center;
-  background-color: $aqua-marine;
+  background-color: $dark-blue;
   width: 220px;
   height: 41px;
   border-radius: 32px;
@@ -44,7 +44,7 @@ section{
   }
 }
 
-.card-body>.tour-info{
+.card-body>.box-info{
   text-align: center;
 }
 

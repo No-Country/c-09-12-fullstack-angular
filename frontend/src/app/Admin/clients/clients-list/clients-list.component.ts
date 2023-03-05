@@ -32,9 +32,6 @@ export class ClientsListComponent implements OnInit {
     private toastr:ToastrService,
     private dialog: MatDialog
     ) {
-
-
-
   }
 
   ngOnInit(): void {

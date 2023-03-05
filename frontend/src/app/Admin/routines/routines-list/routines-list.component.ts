@@ -1,8 +1,10 @@
 import { Component } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { ToastrService } from 'ngx-toastr';
 import { Routines } from 'src/app/shared/models/rutines/rutines';
 import { RoutinesUpComponent } from '../routines-up/routines-up.component';
+import { RoutinesService } from '../../../shared/services/routines/routines.service';
+import { HttpHeaders } from '@angular/common/http';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-routines-list',
@@ -13,8 +15,16 @@ export class RoutinesListComponent {
 
   routines:Routines[] = [];
 
-  constructor(
+  datosLocalStorage = JSON.parse(localStorage.getItem("user")!);
+  tokenLocalStorage = this.datosLocalStorage.token;
 
+
+  headers = new HttpHeaders({
+    'Authorization': `Bearer ${this.tokenLocalStorage}`
+  });
+
+  constructor(
+    private routineService:RoutinesService,
     private toastr:ToastrService,
     private dialog: MatDialog
     ) {
@@ -22,23 +32,32 @@ export class RoutinesListComponent {
   }
 
   ngOnInit(): void {
-    // this.getAllRoutines();
+    this.getAllRoutines();
   }
 
   getAllRoutines(){
-    // this.userService.getAllUsers().subscribe(data => {
-    //   this.users = data;
-    // }, error => {
-    //   console.log(error)
-    // })
+    this.routineService.getAllRoutines(this.headers).subscribe(data => {
+      this.routines = data;
+    }, error => {
+      console.log(error)
+    })
   }
 
-  openModal(client={}):void {
+  openModal(routines={}):void {
     this.dialog.open(RoutinesUpComponent, {
       height: 'auto',
       width: '600px',
-      data: { title: 'Agregar Rutina'}
+      data: { title: 'Agregar Rutina', routines}
 
+    });
+  }
+
+  deleteRoutine(id:any){
+    this.routineService.deleteRoutine(id, this.headers).subscribe(data => {
+      this.toastr.success('El producto fue eliminado con exito', 'Producto Eliminado');
+      this.getAllRoutines();
+    }, error => {
+      this.toastr.error(error, 'Failed Delete');
     });
   }
 

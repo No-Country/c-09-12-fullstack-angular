@@ -32,7 +32,7 @@ export const RESET_PASS_URL = BASE_URL + 'auth/new-password';
 export const ROUTINES_URL = BASE_URL + 'rutines';
 
 // Trae, Edita y Elimina una rutina por ID - GET - PUT- DELETE
-export const ROUTINES_BY_ID_URL = ROUTINES_URL + '/';
+export const ROUTINES_BY_ID_URL = ROUTINES_URL + '';
 
 // -----------------------EJERCICIOS------------------------------------------------
 
