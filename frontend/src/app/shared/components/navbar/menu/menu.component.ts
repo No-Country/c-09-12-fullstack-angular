@@ -8,7 +8,11 @@ import { v4 as uuidv4 } from 'uuid';
   styleUrls: ['./menu.component.scss'],
 })
 export class MenuComponent {
-  currentUserRole: string = 'coach';
+
+  datosLocalStorage = JSON.parse(localStorage.getItem("user")!);
+  roleLocalStorage = this.datosLocalStorage.role;
+
+  currentUserRole: string =  this.roleLocalStorage;
 
   menuOptions: { id: string; routerLink: string; name: string }[] = [];
 
@@ -80,4 +84,5 @@ export class MenuComponent {
   onLogout(): void {
     this.authService.logout();
   }
+
 }
