@@ -9,9 +9,9 @@
 
       <div class="inputs">
         <div class="box-mail">
-          <mat-form-field class="example-full-width" color="accent">
+          <mat-form-field class="example-full-width" color="primary">
             <mat-label for="">Email</mat-label>
-            <input class="mat-input" type="email" matInput formControlName="email" placeholder="Ej. delorean@gmail.com" tabindex=”0”>
+            <input class="mat-input" type="email" matInput formControlName="email" placeholder="Ej. titanic@gmail.com" tabindex=”0”>
             <mat-error *ngIf="isValidField('email')">
               <strong>{{ getErrorMessage('email') }}</strong>
             </mat-error>
@@ -20,7 +20,7 @@
       </div>
 
       <div class="continue">
-        <button [disabled]="identifyForm.invalid" class="btn btn-lg" type="submit" tabindex=”0”>Continuar</button>
+        <button class="btn btn-lg" type="submit" tabindex=”0”>Continuar</button>
       </div>
 
     </form>

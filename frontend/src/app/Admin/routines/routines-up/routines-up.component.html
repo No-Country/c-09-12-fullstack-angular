@@ -1,0 +1,79 @@
+<h1 mat-dialog-title class="title">{{ data.title }}</h1>
+<hr />
+<mat-dialog-content>
+  <div class="modal-form">
+    <form
+      class="form"
+      [formGroup]="routinesForm"
+      (ngSubmit)="saveRoutines()"
+      class="form"
+      name="login"
+    >
+      <div class="inputs">
+
+        <div class="box-form">
+          <mat-form-field class="example-full-width" color="primary">
+            <mat-label for="">Nombre</mat-label>
+            <input
+              class="mat-input"
+              type="text"
+              matInput
+              formControlName="name"
+              tabindex="”0”"
+            />
+          </mat-form-field>
+        </div>
+
+        <div class="box-form">
+          <mat-form-field class="example-full-width" color="primary">
+            <mat-label for="">Ejercicio</mat-label>
+            <mat-select formControlName="dataRutine" tabindex="0">
+              <mat-option *ngFor="let excercise of excercises" value="{{ excercise.name }}">
+                {{ excercise.name }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+
+        <!-- <div class="box-form">
+          <mat-form-field class="example-full-width" color="primary">
+            <mat-label for="">Ejercicios</mat-label>
+            <input
+              class="mat-input"
+              type="text"
+              matInput
+              formControlName="dataRutine"
+              tabindex="”0”"
+            />
+          </mat-form-field>
+        </div> -->
+
+        <div class="box-form">
+          <mat-form-field class="example-full-width" color="primary">
+            <mat-label for="">Descripción</mat-label>
+            <input
+              class="mat-input"
+              type="text"
+              matInput
+              formControlName="description"
+              tabindex="”0”"
+            />
+          </mat-form-field>
+        </div>
+      </div>
+
+      <div class="submit">
+        <button mat-dialog-close class="btn btn-lg btn-secondary">
+          Cancelar
+        </button>
+        <button
+          class="btn btn-lg button-submit"
+          type="submit"
+          tabindex="”0”"
+        >
+          Agregar
+        </button>
+      </div>
+    </form>
+  </div>
+</mat-dialog-content>

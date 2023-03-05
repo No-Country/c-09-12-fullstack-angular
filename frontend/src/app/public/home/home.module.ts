@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { HomeComponent } from './page/home.component';
 import { SharedModule } from '../../shared/shared.module';
 import { RouterModule } from '@angular/router';
-import {MatTabsModule} from '@angular/material/tabs';
+import { MatTabsModule } from '@angular/material/tabs';
 
 import { CardsComponent } from './components/cards/cards.component';
 import { RoutineOneComponent } from './components/routine-one/routine-one.component';

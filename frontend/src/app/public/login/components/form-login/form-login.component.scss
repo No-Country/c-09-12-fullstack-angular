@@ -1,7 +1,9 @@
-@import 'extends-class';
-@import 'mixins-responsive';
+@import "extends-class";
+@import "mixins-responsive";
+@import "../../../../shared/lib-styles/mediaQuery";
+@import "../../../../shared/lib-styles/variables";
 
-.formulario{
+.formulario {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -10,11 +12,11 @@
   gap: 20px;
 }
 
-.formulario>a{
+.formulario > a {
   color: $black;
 }
 
-.box1{
+.box1 {
   @extend .flex-column-center;
   background-color: $white;
   max-width: 570px;
@@ -23,148 +25,136 @@
   padding: 40px;
   gap: 30px;
 
-  @include screen(720px){
+  @include screen(720px) {
     width: 470px;
   }
 
-  @include screen(560px){
+  @include screen(560px) {
     width: 370px;
     padding: 20px;
   }
 
-  @include screen(390px){
+  @include screen(390px) {
     width: 270px;
   }
-  @include screen(290px){
+  @include screen(290px) {
     width: 270px;
   }
 }
 
-.titulo{
+.titulo {
   @extend .flex-column-around-center;
   color: $black;
   gap: 15px;
 
-  @include screen(290px){
+  @include screen(290px) {
     gap: 10px;
   }
 }
 
-.titulo>h2{
+.titulo > h2 {
   font-size: 35px;
 
-  @include screen(560px){
+  @include screen(560px) {
     font-size: 30px;
   }
 }
 
-.form{
+.form {
   @extend .flex-column-center;
   gap: 60px;
 
-  @include screen(720px){
+  @include screen(720px) {
     width: 470px;
     gap: 40px;
   }
 
-  @include screen(560px){
+  @include screen(560px) {
     width: 370px;
     gap: 30px;
   }
 
-  @include screen(390px){
+  @include screen(390px) {
     width: 270px;
   }
 
-  @include screen(290px){
+  @include screen(290px) {
     width: 270px;
     gap: 40px;
   }
 }
 
-.inputs{
+.inputs {
   display: flex;
   flex-direction: column;
   gap: 2em;
 }
 
-.inputs>i{
+.inputs > i {
   cursor: pointer;
 }
 
-.box-form{
+.box-form {
   display: flex;
   flex-direction: column;
   width: 487px;
   font-size: 18px;
 
-  @include screen(720px){
+  @include screen(720px) {
     width: 370px;
   }
 
-  @include screen(560px){
+  @include screen(560px) {
     width: 290px;
   }
 
-  @include screen(390px){
+  @include screen(390px) {
     width: 230px;
   }
 
-  @include screen(290px){
+  @include screen(290px) {
     width: 230px;
   }
 }
 
-.login{
-  @extend .flex-column-around-center;
-  gap: 20px;
-}
-
-.login>button{
-  @extend .general-button;
-  @extend .large-button;
+.login {
+  width: 100%;
   display: flex;
-  justify-content: space-around;
-  align-items: center;
-  background-color: $dark-blue;
+  justify-content: center;
 
-  @include screen(720px){
-    width: 370px;
-  }
+  &__btn {
+    color: $white;
+    background-color: $light-blue;
+    width: 80%;
+    padding: 0.5rem;
+    font-size: 1.2em;
+    border-radius: 1.5rem;
 
-  @include screen(560px){
-    width: 290px;
-  }
-
-  @include screen(390px){
-    width: 230px;
-  }
-
-  @include screen(290px){
-    width: 230px;
+    @media screen and (min-width: 720px) {
+      width: 100%;
+    }
   }
 }
 
-.forgot-pass{
+.forgot-pass {
   display: flex;
   justify-content: space-around;
 
-  @include screen(720px){
+  @include screen(720px) {
     font-size: 18px;
   }
 
-  @include screen(390px){
+  @include screen(390px) {
     width: 100%;
     font-size: 16px;
   }
 
-  @include screen(290px){
+  @include screen(290px) {
     width: 230px;
   }
-
 }
 
-.box2{
+.box2 {
   @extend .flex-column-center;
   background-color: $white;
   width: 570px;
@@ -174,37 +164,36 @@
   align-items: center;
   justify-content: center;
 
-  @include screen(720px){
+  @include screen(720px) {
     width: 470px;
   }
 
-  @include screen(560px){
+  @include screen(560px) {
     width: 370px;
   }
 
-  @include screen(390px){
+  @include screen(390px) {
     width: 270px;
   }
 
-  @include screen(290px){
+  @include screen(290px) {
     width: 270px;
   }
-
 }
 
-.sign-in{
+.sign-in {
   display: flex;
   flex-direction: row;
   font-size: 18px;
   gap: 10px;
   margin-top: 15px;
 
-  @include screen(390px){
+  @include screen(390px) {
     font-size: 15px;
     gap: 5px;
   }
 
-  @include screen(290px){
+  @include screen(290px) {
     font-size: 15px;
     gap: 5px;
   }

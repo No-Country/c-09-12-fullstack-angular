@@ -1,19 +1,20 @@
 import { Role } from "./userLogin";
 
 export interface UserRegister {
-  fist_name: string;
-  last_name: string;
-  email: string;
-  password: string;
-  age: number;
-  registerDate: Date;
-  weight: string;
-  objective: string;
-  level: string;
-  injuries_patologies: string;
-  phone_number: string;
-  address: string;
-  isActive: boolean;
-  daysPerWeek: string;
-  role: Role;
+  id:number;
+  firstName:string;
+  lastName:string;
+  phoneNumber:number;
+  address:string;
+  email:string;
+  password:string;
+  registerDate:Date;
+  weight:number;
+  objetive:string;
+  level:string;
+  injuriesPatologies:string;
+  isActive:boolean;
+  daysPerWeek:number;
+  userImg:string;
+  rol:Role;
 };

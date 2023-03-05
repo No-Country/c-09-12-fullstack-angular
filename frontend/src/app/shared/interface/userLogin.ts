@@ -1,4 +1,4 @@
-export type Role = 'admin' | 'coach';
+export type Role = 'admin' | 'coach' | 'client';
 
 export interface UserLogin {
   email: string;
@@ -6,9 +6,12 @@ export interface UserLogin {
 };
 
 export interface UserResponse {
+  id: number;
+  email:string;
+  firstName:string;
+  lastName:string;
   token: string;
-  userId: number;
-  role: Role;
+  role:Role;
 };
 
 export interface UserSendEmail {

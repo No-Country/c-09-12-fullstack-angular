@@ -5,7 +5,10 @@ import { HomeComponent } from './public/home/page/home.component';
 
 const routes: Routes = [
   { path: '', loadChildren: () => import('./public/public.module').then(m => m.PublicModule) },
+  { path: '', loadChildren: () => import('./private/private.module').then(m => m.PrivateModule) },
+  { path: '', loadChildren: () => import('./Admin/admin.module').then(m => m.AdminModule) },
   { path: 'home', component: HomeComponent},
+  { path: '**', component: HomeComponent},
 ];
 
 @NgModule({

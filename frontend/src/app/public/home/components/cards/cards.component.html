@@ -1,26 +1,8 @@
-<section>
-  <div class="card">
-    <a class="face front" routerLink="/home/routine-one">
-      <img src="../../../../../assets/cards-home/musculatura.jpg">
-      <div class="title">
-        <h3>Musculatura</h3>
-      </div>
+<section class="home">
+  <div class="home__card" *ngFor="let card of cards">
+    <a class="home__link" [routerLink]="card.linkRouter" [title]="card.linkTitle">
+      <img [src]="card.src" [alt]="card.alt">
+      <h2 class="home__title bg-dark">{{ card.title }}</h2>
     </a>
   </div>
-  <a class="card" routerLink="/home/routine-two">
-    <div class="face front">
-      <img src="../../../../../assets/cards-home/definicion.jpg">
-      <div class="title">
-        <h3>Definición</h3>
-      </div>
-    </div>
-  </a>
-  <a class="card" routerLink="/home/routine-three">
-    <div class="face front">
-      <img src="../../../../../assets/cards-home/fuerza.jpg">
-      <div class="title">
-        <h3>Fuerza</h3>
-      </div>
-    </div>
-  </a>
 </section>

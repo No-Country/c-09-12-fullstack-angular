@@ -1,0 +1,49 @@
+<section>
+  <div class="newBox">
+    <div class="button-new">
+      <button class="btn btn-lg" (click)="openModal()">Agregar Ejercicio</button>
+    </div>
+  </div>
+  <div class="container mt-5">
+    <div class="row">
+      <div class="col-lg-8-offset-lg-2">
+        <div class="card">
+          <div class="card-body text-center">
+            <span class="title"><strong>Listado de Ejercicios</strong></span>
+            <div class="table-responsive">
+              <table class="table table-striped mt-4">
+                <thead>
+                  <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Musculo</th>
+                    <th scope="col">Repeticiones</th>
+                    <th scope="col">Peso</th>
+                    <th scope="col">Tiempo</th>
+                    <th scope="col"></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let excercise of excercises" class="box-info">
+                    <td>{{ excercise.id }}</td>
+                    <td>{{ excercise.name | titlecase }}</td>
+                    <td>{{ excercise.muscle }}</td>
+                    <td>{{ excercise.repeat }}</td>
+                    <td>{{ excercise.weight }}</td>
+                    <td>{{ excercise.time }}</td>
+                    <td class="buttons">
+                      <button
+                        (click)="openModal(excercises)"
+                        class="bi bi-pencil-square text-primary"
+                      ></button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -7,13 +7,18 @@ import { FooterComponent } from './components/footer/footer.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { RouterModule } from '@angular/router';
 import { PublicRoutingModule } from '../public/public-routing.module';
+import { MenuComponent } from './components/navbar/menu/menu.component';
+import { AuthorsComponent } from './components/footer/authors/authors.component';
+
 
 
 
 @NgModule({
   declarations: [
     FooterComponent,
-    NavbarComponent
+    NavbarComponent,
+    MenuComponent,
+    AuthorsComponent
   ],
   imports: [
     CommonModule,
